@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docling UI - Componentes Spotify Theme (Light)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Reddit Sans -->
+    <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Reddit Sans', 'sans-serif'],
+                    },
+                    fontSize: {
+                        'xs': ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.025em' }],
+                        'sm': ['0.875rem', { lineHeight: '1.25rem', letterSpacing: '0.025em' }],
+                        'base': ['1rem', { lineHeight: '1.5rem', letterSpacing: '0.025em' }],
+                        'lg': ['1.125rem', { lineHeight: '1.75rem', letterSpacing: '0.025em' }],
+                        'xl': ['1.25rem', { lineHeight: '1.75rem', letterSpacing: '0.025em' }],
+                        '2xl': ['1.5rem', { lineHeight: '2rem', letterSpacing: '0.025em' }],
+                        '3xl': ['1.875rem', { lineHeight: '2.25rem', letterSpacing: '0.025em' }],
+                        '4xl': ['2.25rem', { lineHeight: '2.5rem', letterSpacing: '0.025em' }],
+                    },
+                    colors: {
+                        spotify: {
+                            50: '#E3F9E5',
+                            100: '#C1F2C7',
+                            200: '#91E697',
+                            300: '#51CA58',
+                            400: '#31B237',
+                            500: '#1DB954',
+                            600: '#189E46',
+                            700: '#0F8033',
+                            800: '#0B5A24',
+                            900: '#053B16',
+                        },
+                        neutral: {
+                            50: '#F8F8F8',
+                            100: '#F1F1F1',
+                            200: '#E4E4E4',
+                            300: '#D1D1D1',
+                            400: '#B4B4B4',
+                            500: '#9A9A9A',
+                            600: '#818181',
+                            700: '#6A6A6A',
+                            800: '#414141',
+                            900: '#1A1A1A',
+                        }
+                    },
+                    backgroundColor: {
+                        'spotify-light': '#FFFFFF',
+                        'spotify-card': '#F8F8F8',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos específicos para a Reddit Sans */
+        body {
+            font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Ajustes de tracking para títulos */
+        h1, h2, h3, h4, h5, h6 {
+            letter-spacing: -0.025em;
+        }
+
+        /* Ajustes de tracking para textos */
+        p, span, div {
+            letter-spacing: 0.025em;
+        }
+
+        /* Ajustes de tracking para botões */
+        button {
+            letter-spacing: 0.025em;
+            font-weight: 500;
+        }
+
+        /* Ajustes de tracking para inputs */
+        input {
+            letter-spacing: 0.025em;
+        }
+    </style>
+</head>
+<body class="bg-spotify-light text-neutral-900 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-12">
+            <h1 class="text-4xl font-bold mb-4 text-spotify-500 tracking-tight">Docling UI Components</h1>
+            <p class="text-neutral-600 text-lg">Exemplos de componentes com tema Spotify (Light Mode)</p>
+        </header>
+
+        <!-- Seção de Botões -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6 tracking-tight">Botões</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <button class="bg-spotify-500 hover:bg-spotify-600 text-white px-4 py-2 rounded-full transition-colors shadow-sm font-medium">
+                    Botão Primário
+                </button>
+                <button class="bg-neutral-100 hover:bg-neutral-200 text-neutral-900 px-4 py-2 rounded-full transition-colors shadow-sm font-medium">
+                    Botão Secundário
+                </button>
+                <button class="border-2 border-spotify-500 text-spotify-500 hover:bg-spotify-50 px-4 py-2 rounded-full transition-colors font-medium">
+                    Botão Outline
+                </button>
+                <button class="hover:bg-spotify-50 text-spotify-500 px-4 py-2 rounded-full transition-colors font-medium">
+                    Botão Ghost
+                </button>
+                <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full transition-colors shadow-sm font-medium">
+                    Botão Danger
+                </button>
+                <button class="bg-spotify-500 hover:bg-spotify-600 text-white px-4 py-2 rounded-full transition-colors disabled:opacity-50 shadow-sm font-medium" disabled>
+                    Botão Desabilitado
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção de Cards -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6 tracking-tight">Cards</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 hover:bg-neutral-50 transition-colors">
+                    <h3 class="text-lg font-semibold mb-2 text-spotify-500 tracking-tight">Card Básico</h3>
+                    <p class="text-neutral-600">Este é um exemplo de card básico com conteúdo.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 hover:bg-neutral-50 transition-colors">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-spotify-500 tracking-tight">Card com Ações</h3>
+                        <button class="text-neutral-500 hover:text-neutral-700">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="text-neutral-600">Card com ações e interações.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 hover:bg-neutral-50 transition-colors">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-spotify-100 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-spotify-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-spotify-500 tracking-tight">Card com Ícone</h3>
+                            <p class="text-sm text-neutral-500">Documento</p>
+                        </div>
+                    </div>
+                    <p class="text-neutral-600">Card com ícone e metadados.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Alertas -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6">Alertas</h2>
+            <div class="space-y-4">
+                <div class="bg-spotify-50 border border-spotify-200 text-spotify-800 px-4 py-3 rounded-lg">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-spotify-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium">Operação concluída com sucesso!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium">Ocorreu um erro ao processar o documento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Progresso -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6">Progresso</h2>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-sm font-medium">Upload do Documento</span>
+                        <span class="text-sm font-medium">75%</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 rounded-full h-2.5">
+                        <div class="bg-spotify-500 h-2.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-sm font-medium">Conversão para Markdown</span>
+                        <span class="text-sm font-medium">100%</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 rounded-full h-2.5">
+                        <div class="bg-spotify-500 h-2.5 rounded-full" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Inputs -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6 tracking-tight">Inputs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Input Padrão</label>
+                    <input type="text" class="w-full rounded-md border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-spotify-500 focus:border-transparent" placeholder="Digite algo...">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Input com Erro</label>
+                    <input type="text" class="w-full rounded-md border border-red-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Campo com erro">
+                    <p class="mt-1 text-sm text-red-600">Este campo é obrigatório</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Tabela -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6 tracking-tight">Tabela</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-neutral-200">
+                    <thead class="bg-neutral-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                                Nome
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                                Status
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                                Data
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                                Ações
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-neutral-200">
+                        <tr class="hover:bg-neutral-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900">
+                                documento1.pdf
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-spotify-100 text-spotify-800">
+                                    Concluído
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500">
+                                2024-03-20
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500">
+                                <button class="text-spotify-500 hover:text-spotify-600 font-medium">Download</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-neutral-50">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-900">
+                                documento2.docx
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                    Processando
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500">
+                                2024-03-20
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-500">
+                                <button class="text-spotify-500 hover:text-spotify-600 font-medium">Aguardando</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

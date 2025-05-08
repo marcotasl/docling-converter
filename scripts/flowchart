@@ -1,0 +1,29 @@
+graph TD
+    A[Usuário] -->|Acessa App| B[Página Inicial]
+    B -->|Login/Registro| C[Autenticação]
+    C -->|Sucesso| D[Dashboard]
+    
+    D -->|Upload| E[Upload de Documento]
+    E -->|Processa| F[Docling Converter]
+    
+    F -->|Sucesso| G[Salva Markdown]
+    F -->|Falha| H[Registra Erro]
+    
+    G -->|Atualiza| I[Histórico]
+    H -->|Atualiza| I
+    
+    I -->|Visualiza| J[Preview]
+    I -->|Download| K[Download MD]
+    I -->|Compartilha| L[Compartilhamento]
+    
+    subgraph "Processo de Conversão"
+        F -->|1. Análise| F1[Detecta Formato]
+        F1 -->|2. Extração| F2[Extrai Conteúdo]
+        F2 -->|3. Conversão| F3[Converte para MD]
+        F3 -->|4. Validação| F4[Valida Formato]
+    end
+    
+    subgraph "Armazenamento"
+        M[(S3 Storage)] -->|Original| N[Arquivo Original]
+        M -->|Convertido| O[Arquivo MD]
+    end
