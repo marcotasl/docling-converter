@@ -525,7 +525,7 @@ dist
 
 # Gatsby files
 .cache/
-public
+/public/
 
 # vuepress build output
 .vuepress/dist
@@ -555,3 +555,5 @@ public
 # Prisma
 /prisma/*.db
 /prisma/migrations/
+
+!/public/.gitkeep
